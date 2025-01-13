@@ -1,0 +1,12 @@
+<odoo>
+<data>
+
+     <template id="assets_common" inherit_id="web.assets_frontend">
+        <xpath expr="//link[last()]" position="after">
+            <link rel="stylesheet" href="/location_biens/static/src/css/assets_common.css"/>
+            <link rel="stylesheet" href="/location_biens/static/src/css/site.css"/>
+        </xpath>
+    </template>
+
+</data>
+</odoo>

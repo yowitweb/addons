@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    
+    <template id="location_facture" inherit_id="account.report_invoice_document">
+
+
+        <xpath expr="//table[@class='table table-sm o_main_table']" position="after">
+            <p>
+                <span t-if="l.product_id.location">Location :</span>
+                <span t-if="l.product_id.location.name" t-field="l.product_id.location.name"/>
+                <span t-if="l.product_id.location.name2" >, <span t-field="l.product_id.location.name2"/></span>
+                <span t-if="l.product_id.location.city">, <span t-field="l.product_id.location.city"/></span>
+                <span t-if="l.product_id.location.state_id">, <span t-field="l.product_id.location.state_id"/></span>
+                <span t-if="l.product_id.location.country_id">, <span t-field="l.product_id.location.country_id"/></span>
+                <span t-if="l.product_id.location.zip">, <span t-field="l.product_id.location.zip"/></span>
+                <span t-if="l.product_id.location.phone">, <span t-field="l.product_id.location.phone"/></span>
+            </p>
+
+        </xpath>
+   
+    </template>
+</odoo>

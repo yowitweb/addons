@@ -1,0 +1,58 @@
+.button_fermer {
+  padding: 15px 25px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #1f5574;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 9px #999;
+}
+
+.button_fermer:hover {background-color: #3e8e41}
+
+.button_fermer:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+
+
+
+
+
+
+.container_img_btn {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.container_img_btn img {
+  width: 100%;
+  height: auto;
+}
+
+.container_img_btn .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container_img_btn .btn:hover {
+  background-color: black;
+}

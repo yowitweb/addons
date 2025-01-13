@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- 
+    <record id="view_in_preference" model="ir.ui.view">
+        <field name="name">product_location.view_in_preference</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+        <field name="arch" type="xml">
+            <button name="preference_change_password" position="after">
+                <field name="locations" string="Locations" readonly="0" />
+            </button> 
+        </field>
+    </record>
+    -->
+
+    <record id="view_in_product_template" model="ir.ui.view">
+        <field name="name">product_location.view_in_product_template</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <field name="categ_id" position="after">
+                <field name="location"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_location_form" model="ir.ui.view">
+        <field name="name">product_location.view_location_form</field>
+        <field name="model">product.location</field>
+        <field name="arch" type="xml">
+            <form string="Location">
+                <sheet>
+                    <group>
+                        <field name="name" placeholder="Street..."/>
+                        <field name="name2" placeholder="Street 2..."/>
+                        <field name="city" placeholder="City..."/>
+                        <field name="state_id" placeholder="State..." options='{"no_open": True}'/>
+                        <field name="country_id" placeholder="Country..." options='{"no_open": True}'/>
+                        <field name="zip" placeholder="ZIP..."/>
+                        <field name="phone" placeholder="Phone..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record model="ir.ui.view" id="product_location_tree_view" >
+        <field name="name">product_location.product_location_tree_view</field>
+        <field name="model">product.location</field>
+        <field name="field_parent" eval="False"/>
+        <field name="arch" type="xml">
+            <tree string="Product Location">
+                <field name="name"/>
+                <field name="name2"/>
+                <field name="city"/>
+                <field name="state_id"/>
+                <field name="country_id"/>
+            </tree>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="product_location_action">
+        <field name="name">Product Location</field>
+        <field name="res_model">product.location</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Create the first product location
+            </p>
+        </field>
+    </record>
+    
+    <menuitem id="menu_website_product_location" name="Product Location" parent="website_sale.menu_product_settings"
+                  action="product_location_action"/>
+    
+    <menuitem id="menu_product_location" name="Product Location" parent="sale.menu_sale_config"
+                  action="product_location_action" groups="sales_team.group_sale_manager"/>
+
+</odoo>
